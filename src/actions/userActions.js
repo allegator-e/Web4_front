@@ -11,6 +11,7 @@ export const SET_USER_ANSWER = 'SET_USER_ANSWER';
 
 export function logout() {
     return dispatch => {
+        console.log('fucking fuck');
         dispatch({
             type: LOGOUT,
             payload: false,
@@ -42,19 +43,21 @@ export function login(butch) {
                         payload: true,
                     });
                     localStorage.setItem("loginIn", butch.login);
-                } else if (Number(result.status) === 400) {
+                }
+            })
+            .catch(result => {
+                if (Number(result.status) == 400) {
                     dispatch({
                         type: LOGIN_FAIL,
                         payload: "Неверный логин или пароль",
                     })
+                } else {
+                    console.log(result);
+                    dispatch({
+                        type: LOGIN_FAIL,
+                        payload: "Проблемы с сервером, попробуйте позже :(",
+                    })
                 }
-            })
-            .catch(result => {
-                console.log(result);
-                dispatch({
-                    type: LOGIN_FAIL,
-                    payload: "Проблемы с сервером, попробуйте позже :(",
-                })
             });
     }
 }
@@ -73,19 +76,21 @@ export function registration(butch) {
                         type: REGISTER,
                         payload: "Регистрация завершена!"
                     })
-                } else if (Number(result.status) === 400) {
+                }
+            })
+            .catch(result => {
+                if (Number(result.status) === 400) {
                     dispatch({
                         type: REGISTER,
                         payload: "Такой пользователь уже существует, введите другой логин для регистрации",
                     });
+                } else {
+                    console.log(result);
+                    dispatch({
+                        type: REGISTER,
+                        payload: "Проблемы с сервером, попробуйте позже :(",
+                    });
                 }
-            })
-            .catch(result => {
-                console.log(result);
-                dispatch({
-                    type: REGISTER,
-                    payload: "Проблемы с сервером, попробуйте позже :(",
-                });
             })
         ;
     }

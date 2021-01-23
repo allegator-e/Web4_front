@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import {connect} from 'react-redux';
-import {Header} from "../components/Header";
+import Header from "../components/Header";
 import {Clock} from "../components/Clock";
 import Login from "./Login";
 import {Cat} from "../components/Cat";
@@ -13,15 +13,9 @@ class FirstPage extends Component{
         return(
             <div className="firstPage">
                 {user.isLogin && <Redirect to={"/~s285605/main"}/>}
-                <Header
-                    group={header.group}
-                    firstDeveloper={header.firstDeveloper}
-                    secondDeveloper={header.secondDeveloper}
-                    variant={header.variant}
-                    style={style}
-                    logout={false}/>
+                <Header/>
                 <Clock style={style}/>
-                <Login style={style}/>
+                <Login/>
                 <Cat style={style}/>
             </div>
         )

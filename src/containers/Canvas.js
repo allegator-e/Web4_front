@@ -73,16 +73,22 @@ class Canvas extends React.Component{
                     <text x="210" y="265">-R/2</text>
                     <text x="210" y="325">-R</text>
 
-                    <polygon points="140,200 140,80 200,80, 200,200" fill="purple" fill-opacity="0.3"
-                             stroke="purple"></polygon>
+                    <polygon points="320,200 320,260 200,260, 200,200" fill="purple" fill-opacity="0.3"
+                             stroke="purple"/>
 
-                    <path d="M 260 200 A 70 70, 0, 0, 1, 200 260 L 200 200 Z" fill="purple" fill-opacity="0.3"
-                          stroke="purple"></path>
+                    <path d="M 80 200 A 110 110, 0, 0, 1, 200 80 L 200 200 Z" fill="purple" fill-opacity="0.3"
+                          stroke="purple"/>
 
-                    <polygon points="200,140 200,200 320,200" fill="purple" fill-opacity="0.3"
-                             stroke="purple"></polygon>
+                    <polygon points="200,140 200,200 260,200" fill="purple" fill-opacity="0.3"
+                             stroke="purple"/>
 
-                    <circle r="3" cx="200" cy="200" id="point" fill="black"></circle>
+                    <circle r="3" cx="200" cy="200" id="point" fill="black"/>
+                    {page.table.map((item) => (
+                        <circle r="3"
+                                cx={(item.x * (12*this.props.page.canvasWidth/41) / item.r + this.props.page.canvasWidth/2)}
+                                cy={(item.y * -(12*this.props.page.canvasWidth/41) / item.r + this.props.page.canvasWidth/2)}
+                                fill={item.hit ? "yellow" : "red"}/>
+                    ))}
                 </svg>
             </div>
         )

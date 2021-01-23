@@ -1,5 +1,5 @@
 import React from "react";
-import {Header} from "../components/Header";
+import Header from "../components/Header";
 import Canvas from "./Canvas";
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router';
@@ -12,7 +12,6 @@ import {
 import {logout} from "../actions/userActions";
 import Form from "./Form";
 import {Table} from "../components/Table";
-import {Button} from "primereact/button";
 import {Kitten} from "../components/Kitten";
 
 
@@ -41,14 +40,8 @@ class SecondPage extends React.Component{
         const {header,style,page,user} = this.props;
         return(
             <div style={style.style.base}>
-                {/*!user.isLogin && <Redirect to={"/~s285605/"}/>*/}
-                <Header
-                    group={header.group}
-                    firstDeveloper={header.firstDeveloper}
-                    secondDeveloper={header.secondDeveloper}
-                    variant={header.variant}
-                    style={style}
-                    logout={true}/>
+                {!user.isLogin && <Redirect to={"/~s285605/"}/>}
+                <Header/>
                     <Kitten style={style}/>
                     <Form />
                     <Canvas />
