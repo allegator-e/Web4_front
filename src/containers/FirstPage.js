@@ -18,7 +18,8 @@ class FirstPage extends Component{
                     firstDeveloper={header.firstDeveloper}
                     secondDeveloper={header.secondDeveloper}
                     variant={header.variant}
-                    style={style}/>
+                    style={style}
+                    logout={false}/>
                 <Clock style={style}/>
                 <Login style={style}/>
                 <Cat style={style}/>

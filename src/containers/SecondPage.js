@@ -41,17 +41,17 @@ class SecondPage extends React.Component{
         const {header,style,page,user} = this.props;
         return(
             <div style={style.style.base}>
-                {/*{!user.isLogin && <Redirect to={"/~s285605/"}/>}*/}
+                {/*!user.isLogin && <Redirect to={"/~s285605/"}/>*/}
                 <Header
                     group={header.group}
                     firstDeveloper={header.firstDeveloper}
                     secondDeveloper={header.secondDeveloper}
                     variant={header.variant}
-                    style={style}/>
+                    style={style}
+                    logout={true}/>
                     <Kitten style={style}/>
                     <Form />
                     <Canvas />
-                    <Button label={"Logout"} onClick={this.redirectMainPage} style={style.style.logout_button}/>
                     <Table table={page.table} style={style} />
             </div>
         )

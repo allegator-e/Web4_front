@@ -27,7 +27,7 @@ export class Login extends React.Component{
             this.props.setAnswer("Пожалуйста, введите пароль.")
         }else{
             let data = {
-                username: login,
+                login: login,
                 password: password
             };
             this.props.login(data);
@@ -44,7 +44,7 @@ export class Login extends React.Component{
             this.props.setAnswer("Пожалуйста, введите пароль.")
         }else{
             let data = {
-                username: login,
+                login: login,
                 password: password
             };
             this.props.registration(data);

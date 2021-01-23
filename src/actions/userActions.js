@@ -11,13 +11,6 @@ export const SET_USER_ANSWER = 'SET_USER_ANSWER';
 
 export function logout() {
     return dispatch => {
-        axios.get("http://localhost:15000/Web4_Back-end_war/logout", {
-            withCredentials: true,
-        })
-            .then(result => {
-                console.log(result)
-            })
-            .catch(result => console.log(result));
         dispatch({
             type: LOGOUT,
             payload: false,
@@ -28,22 +21,18 @@ export function logout() {
         });
         localStorage.removeItem("loginIn");
     }
-}
+};
 
 export function login(butch) {
     return dispatch => {
-        let header = 'Basic ' + btoa(butch.username + ':' + butch.password);
         axios({
             url: 'http://localhost:15000/Web4_Back-end_war/login',
             method: 'post',
-            headers: {
-                Authorization: header
-            },
+            data: butch,
         })
             .then(result => {
                 console.log(result);
-                if (result.status == 200) {
-                    localStorage.setItem("loginIn", header);
+                if (Number(result.status) === 200) {
                     dispatch({
                         type: LOGIN_SUCCESS,
                         payload: "Welcome!",
@@ -52,7 +41,8 @@ export function login(butch) {
                         type: SET_SIGN_IN,
                         payload: true,
                     });
-                } else {
+                    localStorage.setItem("loginIn", butch.login);
+                } else if (Number(result.status) === 400) {
                     dispatch({
                         type: LOGIN_FAIL,
                         payload: "Неверный логин или пароль",
@@ -78,12 +68,12 @@ export function registration(butch) {
         })
             .then(result => {
                 console.log(result);
-                if (Number(result.status) === 201) {
+                if (Number(result.status) === 200) {
                     dispatch({
                         type: REGISTER,
                         payload: "Регистрация завершена!"
                     })
-                } else {
+                } else if (Number(result.status) === 400) {
                     dispatch({
                         type: REGISTER,
                         payload: "Такой пользователь уже существует, введите другой логин для регистрации",

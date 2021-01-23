@@ -15,8 +15,6 @@ export class Table extends React.Component{
                             <th style={style.style.result_head}>Y</th>
                             <th style={style.style.result_head}>R</th>
                             <th style={style.style.result_head}>HIT</th>
-                            <th style={style.style.result_head}>TIME</th>
-                            <th style={style.style.result_head}>RUNTIME</th>
                         </tr>
                         </thead>
 
@@ -33,13 +31,7 @@ export class Table extends React.Component{
                                     {item.r}
                                 </td>
                                 <td>
-                                    {String(item.inArea)}
-                                </td>
-                                <td>
-                                    {String(item.time)}
-                                </td>
-                                <td>
-                                    {String(item.runtime)}
+                                    {String(item.hit)}
                                 </td>
                             </tr>
                         ))}

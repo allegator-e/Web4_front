@@ -8,27 +8,7 @@ import {logout} from "../actions/userActions";
 class Form extends React.Component{
     constructor(props){
         super(props);
-        this.chooseX = this.chooseX.bind(this);
-        this.chooseY = this.chooseY.bind(this);
-        this.chooseR = this.chooseR.bind(this);
         this.sendPoint = this.sendPoint.bind(this);
-        this.state = {
-            x: 0,
-            y: 0,
-            r: 10
-        };
-    }
-
-    chooseX(e){
-        this.setState({ x: e.value });
-    }
-
-    chooseY(e){
-        this.setState({ y: e.value });
-    }
-
-    chooseR(e){
-        this.setState({ r: e.value });
     }
 
     sendPoint(e){
