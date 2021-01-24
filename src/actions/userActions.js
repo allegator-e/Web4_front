@@ -82,7 +82,7 @@ export function registration(butch) {
                 if (result.response.status === 400) {
                     dispatch({
                         type: REGISTER,
-                        payload: "Такой пользователь уже существует, введите другой логин для регистрации",
+                        payload: "Введите другой логин для регистрации",
                     });
                 } else {
                     console.log(result);

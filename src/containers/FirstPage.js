@@ -9,7 +9,7 @@ import {Redirect} from "react-router";
 class FirstPage extends Component{
 
     render() {
-        const {header,style,page,user} = this.props;
+        const {style,user} = this.props;
         return(
             <div className="firstPage">
                 {user.isLogin && <Redirect to={"/~s285605/main"}/>}
@@ -24,10 +24,8 @@ class FirstPage extends Component{
 
 const mapStateToProps = store => {
     return {
-        header: store.header,
         user: store.user,
         style: store.style,
-        page: store.page
     }
 };
 

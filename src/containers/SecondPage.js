@@ -37,12 +37,10 @@ class SecondPage extends React.Component{
     }
 
     render() {
-        const {header,style,page,user} = this.props;
-        console.log(this.props.page.deviceType + '\n' +
-            this.props.style.style);
+        const {style,page,user} = this.props;
         return(
             <div style={style.style.base}>
-                {/*!user.isLogin && <Redirect to={"/~s285605/"}/>*/}
+                {!user.isLogin && <Redirect to={"/~s285605/"}/>}
                 <Header/>
                     <Kitten style={style}/>
                     <Form />
@@ -55,7 +53,6 @@ class SecondPage extends React.Component{
 
 const mapStateToProps = store => {
     return {
-        header: store.header,
         page: store.page,
         style: store.style,
         user: store.user,

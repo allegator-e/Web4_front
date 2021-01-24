@@ -33,7 +33,7 @@ export const styleDesktop = {
     },
     kitten:{
         marginLeft: '55%',
-        marginTop: '-30%',
+        marginTop: '-25%',
         size: '50%'
     },
     sign: {

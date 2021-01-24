@@ -19,7 +19,7 @@ export class Table extends React.Component{
                         </thead>
                         <tbody>
                         {table.map((item) => (
-                            <tr>                            >
+                            <tr>
                                 <td>
                                     {String(item.x)}
                                 </td>

@@ -4,7 +4,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import '../App.css';
 import {setStyle} from "../actions/styleSetter";
 import {setLogin} from "../actions/userActions";
-import {setWidth, setDevice, setPageWidth, setClock, setCof, setMarginTop, setMarginLeft} from "../actions/pageActions";
+import {setWidth, setDevice} from "../actions/pageActions";
 import {styleDesktop} from '../styles/desktop';
 import {styleTablet} from '../styles/tablet';
 import {stylePhone} from '../styles/phone';
@@ -58,13 +58,8 @@ const mapStateToProps = store =>{
 
 const mapDispatchToProps = dispatch => {
   return{
-      setMarginTop: margin => dispatch(setMarginTop(margin)),
-      setMarginLeft: margin => dispatch(setMarginLeft(margin)),
-      setCof: cof => dispatch(setCof(cof)),
-      setClock: width => dispatch(setClock(width)),
       setStyle: style => dispatch(setStyle(style)),
       setWidth: width => dispatch(setWidth(width)),
-      setPageWidth: width =>dispatch(setPageWidth(width)),
       setDevice: type => dispatch(setDevice(type)),
       setLogin: flag => dispatch(setLogin(flag)),
   }
