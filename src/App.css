@@ -16,3 +16,13 @@
 .App-link {
   color: #61dafb;
 }
+
+@font-face {
+  font-family: 'Jura';
+  src: local('Jura'), url(./Jura-VariableFont_wght.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'PoiretOne';
+  src: local('PoiretOne'), url(./PoiretOne-Regular.ttf) format('opentype');
+}

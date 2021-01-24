@@ -31,7 +31,7 @@ const  initialState = {
     pageWidth: 1440,
     canvasWidth: 420,
     clockSiz3: 600,
-    deviceType: null
+    deviceType: ""
 }
 
 export function pageReducer(state  = initialState,action) {

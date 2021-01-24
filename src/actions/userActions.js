@@ -46,7 +46,7 @@ export function login(butch) {
                 }
             })
             .catch(result => {
-                if (Number(result.status) == 400) {
+                if (result.response.status === 400) {
                     dispatch({
                         type: LOGIN_FAIL,
                         payload: "Неверный логин или пароль",
@@ -79,7 +79,7 @@ export function registration(butch) {
                 }
             })
             .catch(result => {
-                if (Number(result.status) === 400) {
+                if (result.response.status === 400) {
                     dispatch({
                         type: REGISTER,
                         payload: "Такой пользователь уже существует, введите другой логин для регистрации",

@@ -17,18 +17,17 @@ export class Table extends React.Component{
                             <th style={style.style.result_head}>HIT</th>
                         </tr>
                         </thead>
-
                         <tbody>
                         {table.map((item) => (
                             <tr>                            >
                                 <td>
-                                    {item.x}
+                                    {String(item.x)}
                                 </td>
                                 <td>
-                                    {item.y}
+                                    {String(item.y)}
                                 </td>
                                 <td>
-                                    {item.r}
+                                    {String(item.r)}
                                 </td>
                                 <td>
                                     {String(item.hit)}

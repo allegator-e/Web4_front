@@ -51,7 +51,7 @@ export function getTable() {
     return dispatch => {
         let header = localStorage.getItem('loginIn');
         axios({
-            url: 'http://localhost:15000/Web4_Back-end_war/points',
+            url: 'http://localhost:15000/Web4_Back-end_war/',
             method: 'get',
             headers: { login: header,}
         }).then(data =>{

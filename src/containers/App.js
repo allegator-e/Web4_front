@@ -16,39 +16,25 @@ class App extends React.Component {
     super(props);
     let size = window.screen.availWidth;
     console.log(size);
-    this.props.setPageWidth(0.3 * size);
-    if (size > 1279){
+    if (size >= 1247){
         this.props.setStyle(styleDesktop);
-        this.props.setCof(0.3);
-        this.props.setWidth(size*0.3);
-        this.props.setDevice('desktop');
-        this.props.setMarginLeft(50);
-        this.props.setMarginTop(180);
-    }else if (size >= 755){
+        this.props.setDevice("desktop");
+        this.props.setWidth(420)
+    }else if (size >= 855){
         this.props.setStyle(styleTablet);
-        this.props.setWidth(size * 0.2);
-        this.props.setCof(0.2);
-        this.props.setDevice('tablet');
-        this.props.setMarginLeft(10);
-        this.props.setMarginTop(100);
+        this.props.setDevice("tablet");
+        this.props.setWidth(420)
     }else {
-        this.props.setClock(size);
         this.props.setStyle(stylePhone);
-        this.props.setWidth(size *0.9 );
-        this.props.setCof(0.9);
-        this.props.setDevice('phone');
-        this.props.setMarginLeft(0.1 * size/2);
-        this.props.setMarginTop(226);
+        this.props.setDevice("phone");
+        this.props.setWidth(size*0.7)
     }
       if(localStorage.getItem("loginIn")!=null || localStorage.getItem("loginIn")!=undefined){
           this.props.setLogin(true)
       } else {
           this.props.setLogin(false)
       }
-      console.log(this.props.style.style +"\n "+
-          this.props.page.cof+"\n "+
-          this.props.page.canvasWidth+ "\n "+
-          this.props.page.deviceType);
+
   }
 
   render() {

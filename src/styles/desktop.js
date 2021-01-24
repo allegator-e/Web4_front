@@ -1,3 +1,5 @@
+import '../index.css';
+
 export const styleDesktop = {
     header: {
         fontFamily: 'PoiretOne, cursive',
@@ -96,8 +98,6 @@ export const styleDesktop = {
         position: 'absolute',
         right: '3%',
         top: '20%',
-        width: '420px',
-        height: '420px',
         borderWidth: 'thick',
         borderStyle: 'double',
         borderColor: '#fffbff',
