@@ -15,7 +15,8 @@ export const styleDesktop = {
         borderBottomLeftRadius: '50px',
         borderBottomRightRadius: '50px',
         backgroundColor: 'rgba(128,0,128,0.5)',
-        padding: '0.5% 0.5% 0.5% 3%'
+        padding: '0.5% 0.5% 0.5% 3%',
+        textAlign:'left',
     },
     clock: {
         borderColor: 'yellow',
@@ -86,6 +87,7 @@ export const styleDesktop = {
             fontWeight: 'bold',
             fontSize: 'large',
             fontFamily: 'Jura, sans-serif',
+            hover: 'true',
         },
     },
     base: {
@@ -129,12 +131,13 @@ export const styleDesktop = {
             backgroundColor: '#ff7de8',
             borderTopLeftRadius: '50px',
             textAlign: 'left',
-            padding: '1%',
             float: 'left',
             boxShadow: 'inset 0 0 6px',
         },
         chooseX: {
-            marginLeft: '55%',
+            marginTop: '3%',
+            marginLeft: '45%',
+            fontSize: '20px',
         },
         slider: {
             marginTop: '8%',
@@ -149,14 +152,15 @@ export const styleDesktop = {
             backgroundColor: '#ff7de8',
             borderTopRightRadius: '50px',
             textAlign: 'left',
-            'padding': '1%',
             'float': 'right',
             marginTop: '0.5%',
             marginRight: '0.5%',
             boxShadow: 'inset 0 0 6px',
         },
         chooseY: {
+            marginTop: '3%',
             marginLeft: '5%',
+            fontSize: '20px',
         },
         r_in: {
             width: '48%',
@@ -165,7 +169,6 @@ export const styleDesktop = {
             borderColor: 'white',
             backgroundColor: '#ff7de8',
             borderBottomLeftRadius: '50px',
-            padding: '1%',
             float: 'left',
             textAlign: 'left',
             marginTop: '2.5%',
@@ -173,7 +176,9 @@ export const styleDesktop = {
             boxShadow: 'inset 0 0 6px',
         },
         chooseR: {
-            marginLeft: '55%',
+            marginTop: '3%',
+            marginLeft: '45%',
+            fontSize: '20px',
         },
         send_form: {
             width: '48%',

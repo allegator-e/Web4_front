@@ -2,6 +2,7 @@ import React from 'react'
 import {Button} from "primereact/button";
 import {logout} from "../actions/userActions";
 import {connect} from 'react-redux';
+import '../button.css'
 
 class Header extends React.Component{
 
@@ -21,7 +22,7 @@ class Header extends React.Component{
                 {header.variant}
                 <br/>{header.firstDeveloper}, {header.secondDeveloper}
                 <br/>{header.group}<br/>
-                {user.isLogin ? <Button label={"Logout"} onClick={this.redirectMainPage} style={style.style.logout_button}/> : null}
+                {user.isLogin ? <Button id={'logout'} label={"Logout"} onClick={this.redirectMainPage} style={style.style.logout_button}/> : null}
             </div>
         )
     }

@@ -8,6 +8,7 @@ import {Button} from "primereact/button";
 import {Password} from 'primereact/password';
 import {InputText} from "primereact/inputtext";
 import {login, registration, setAnswer, setLogin} from "../actions/userActions";
+import '../button.css'
 
 export class Login extends React.Component{
     constructor(props){
@@ -61,8 +62,8 @@ export class Login extends React.Component{
                     {user.userAnswer === "" ? <br/> : user.userAnswer}
                 </div>
                 <div>
-                     <Button label="Login" style={style.style.loginField.button}  onClick={this.justLogin}/>
-                     <Button label="Register" style={style.style.loginField.button} onClick={this.justRegister}/>
+                     <Button id={'login'} label="Login" style={style.style.loginField.button}  onClick={this.justLogin}/>
+                     <Button id={'register'} label="Register" style={style.style.loginField.button} onClick={this.justRegister}/>
                 </div>
             </div>
         )

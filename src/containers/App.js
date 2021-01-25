@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Route, Redirect} from "react-router-dom";
 import '../App.css';
 import {setStyle} from "../actions/styleSetter";
 import {setLogin} from "../actions/userActions";

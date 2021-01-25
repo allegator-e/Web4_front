@@ -4,6 +4,7 @@ import {Button} from "primereact/button";
 import {Slider} from 'primereact/slider';
 import {getTable, sendPoint, setR, setX, setY} from "../actions/pageActions";
 import {logout} from "../actions/userActions";
+import '../button.css'
 
 class Form extends React.Component{
     constructor(props){
@@ -68,7 +69,7 @@ class Form extends React.Component{
                 </div>
 
                 <div style={style.style.form.send_form}>
-                    <Button label="Отправить" type={"submit"} style={style.style.form.send_button} onClick={this.sendPoint} />
+                    <Button id={'send'} label="Отправить" type={"submit"} style={style.style.form.send_button} onClick={this.sendPoint} />
                 </div>
             </div>
         )

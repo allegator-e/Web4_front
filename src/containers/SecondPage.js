@@ -22,25 +22,18 @@ class SecondPage extends React.Component{
         this.props.setY(0);
         this.props.setR(10);
         this.redirectMainPage = this.redirectMainPage.bind(this);
+        this.props.getTable();
     }
 
     redirectMainPage(e){
         this.props.logout()
     }
 
-    getTable(){
-        this.props.getTable();
-    }
-
-    componentDidMount() {
-        this.getTable()
-    }
-
     render() {
         const {style,page,user} = this.props;
         return(
             <div style={style.style.base}>
-                {!user.isLogin && <Redirect to={"/~s285605/"}/>}
+                {/*!user.isLogin && <Redirect to={"/~s285605/"}/>*/}
                 <Header/>
                     <Kitten style={style}/>
                     <Form />

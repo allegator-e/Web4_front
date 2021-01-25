@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {SET_TABLE} from "./pageActions";
+import {getTable, SET_TABLE} from "./pageActions";
 
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -11,7 +11,6 @@ export const SET_USER_ANSWER = 'SET_USER_ANSWER';
 
 export function logout() {
     return dispatch => {
-        console.log('fucking fuck');
         dispatch({
             type: LOGOUT,
             payload: false,
@@ -34,6 +33,7 @@ export function login(butch) {
             .then(result => {
                 console.log(result);
                 if (Number(result.status) === 200) {
+                    localStorage.setItem("loginIn", butch.login);
                     dispatch({
                         type: LOGIN_SUCCESS,
                         payload: "Welcome!",
@@ -42,8 +42,7 @@ export function login(butch) {
                         type: SET_SIGN_IN,
                         payload: true,
                     });
-                    localStorage.setItem("loginIn", butch.login);
-                }
+            }
             })
             .catch(result => {
                 if (result.response.status === 400) {

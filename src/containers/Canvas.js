@@ -77,9 +77,9 @@ class Canvas extends React.Component{
 
                     {page.table.map((item) => (
                         <circle r="3"
-                                cx={(item.x * (12*this.props.page.canvasWidth/42) / item.r + this.props.page.canvasWidth/2)}
-                                cy={(item.y * -(12*this.props.page.canvasWidth/42) / item.r + this.props.page.canvasWidth/2)}
-                                fill={item.hit ? "yellow" : "red"}/>
+                                cx={(item.x * (12*this.props.page.canvasWidth/42) / item.r + (40*this.props.page.canvasWidth/42)/2)}
+                                cy={(item.y * -(12*this.props.page.canvasWidth/42) / item.r + (40*this.props.page.canvasWidth/42)/2)}
+                    fill={item.hit ? "yellow" : "red"}/>
                     ))}
                 </svg>
             </div>
